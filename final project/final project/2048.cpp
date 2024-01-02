@@ -4,6 +4,7 @@
 
 int a[4][4] = { 0 };  // 4x4的遊戲板
 int pointcount = 0;
+int ex = 0;
 // 顯示遊戲板
 void show() {
 	for (int i = 0; i < 4; i++) {
