@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+int y;
 int a[4][4] = { 0 };  // 4x4的遊戲板
 int pointcount = 0, bigpoint = 0;
 // 顯示遊戲板
