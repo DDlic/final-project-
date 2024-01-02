@@ -17,7 +17,12 @@ void show() {
     }
 }
 
+
 void clearScreen() {
+    // 在 Windows 上使用
+    system("cls");
+    // 在 Unix/Linux 上使用
+    // system("clear");
     // 注?掉以下代?以避免?示??
     // printf("\033[2J\033[H");
 }
