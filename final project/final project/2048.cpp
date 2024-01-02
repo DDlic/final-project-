@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+int x = 0;
 
 int a[4][4] = { 0 };  // 4x4ªº¹CÀ¸ªO
 
