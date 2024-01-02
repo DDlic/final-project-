@@ -52,6 +52,8 @@ void newGame() {
 			a[i][j] = 0;
 		}
 	}
+	printf("highest Point:%d\n", bigpoint);
+	pointcount = 0;
 	int iFirstPos = randomPos(4);
 	int jFirstPos = randomPos(4);
 	a[iFirstPos][jFirstPos] = random(10);
@@ -216,6 +218,10 @@ int judge(char chGet) {
 	if (isGameOver()) {
 		return 0;
 		printf("game over\n");
+	}
+	if (pointcount >= bigpoint)
+	{
+		bigpoint = pointcount;
 	}
 	return 1;
 }
