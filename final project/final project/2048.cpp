@@ -3,7 +3,7 @@
 #include <time.h>
 
 int a[4][4] = { 0 };  // 4x4的遊戲板
-
+int pointcount = 0;
 // 顯示遊戲板
 void show() {
 	for (int i = 0; i < 4; i++) {
@@ -84,12 +84,15 @@ void realChange(int *a0, int *a1, int *a2, int *a3) {
 	if (a[0] == a[1]) {
 		if (a[2] == a[3]) {
 			a[0] = 2 * a[0];
+			pointcount += a[0];
 			a[1] = 2 * a[2];
+			pointcount += a[2];
 			a[2] = 0;
 			a[3] = 0;
 		}
 		else {
 			a[0] = 2 * a[0];
+			pointcount += a[0];
 			a[1] = a[2];
 			a[2] = a[3];
 			a[3] = 0;
@@ -98,12 +101,14 @@ void realChange(int *a0, int *a1, int *a2, int *a3) {
 	else {
 		if (a[1] == a[2]) {
 			a[1] = 2 * a[1];
+			pointcount += a[1];
 			a[2] = a[3];
 			a[3] = 0;
 		}
 		else {
 			if (a[2] == a[3]) {
 				a[2] = 2 * a[2];
+				pointcount += a[2];
 				a[3] = 0;
 			}
 		}
@@ -122,7 +127,8 @@ void upChange() {
 	addNewNumber();
 	clearScreen();
 	show();
-	printf("up\n");
+	printf("Your Point:%d\n", pointcount);
+	printf("right\n");
 }
 
 // 向下移動
@@ -133,7 +139,8 @@ void downChange() {
 	addNewNumber();
 	clearScreen();
 	show();
-	printf("down\n");
+	printf("Your Point:%d\n", pointcount);
+	printf("right\n");
 }
 
 // 向左移動
@@ -144,7 +151,8 @@ void leftChange() {
 	addNewNumber();
 	clearScreen();
 	show();
-	printf("left\n");
+	printf("Your Point:%d\n", pointcount);
+	printf("right\n");
 }
 
 // 向右移動
@@ -155,7 +163,29 @@ void rightChange() {
 	addNewNumber();
 	clearScreen();
 	show();
+	printf("Your Point:%d\n", pointcount);
 	printf("right\n");
+}
+int isGameOver() {
+	// Check for empty spaces
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (a[i][j] == 0) {
+				return 0;  // Game is not over
+			}
+		}
+	}
+
+	// Check for adjacent tiles with the same value
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (a[i][j] == a[i][j + 1] || a[i][j] == a[i + 1][j]) {
+				return 0;  // Game is not over
+			}
+		}
+	}
+
+	return 1;  // Game is over
 }
 
 // 判斷輸入的方向
@@ -180,8 +210,13 @@ int judge(char chGet) {
 		break;
 	case 'q':
 		return 0;
+
 	default:
 		break;
+	}
+	if (isGameOver()) {
+		return 0;
+		printf("game over\n");
 	}
 	return 1;
 }
@@ -190,6 +225,7 @@ int main() {
 	printf("請輸入: wsad上下左右、q退出、n新遊戲\n");
 	srand((int)time(0));
 	newGame();
+	printf("Your Point:\n");
 	char chGet;
 	while (1) {
 		scanf("%c", &chGet);
@@ -200,4 +236,3 @@ int main() {
 	}
 	return 0;
 }
-
