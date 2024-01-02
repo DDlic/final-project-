@@ -166,6 +166,27 @@ void rightChange() {
 	printf("Your Point:%d\n", pointcount);
 	printf("right\n");
 }
+int isGameOver() {
+	// Check for empty spaces
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (a[i][j] == 0) {
+				return 0;  // Game is not over
+			}
+		}
+	}
+
+	// Check for adjacent tiles with the same value
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (a[i][j] == a[i][j + 1] || a[i][j] == a[i + 1][j]) {
+				return 0;  // Game is not over
+			}
+		}
+	}
+
+	return 1;  // Game is over
+}
 
 // 判斷輸入的方向
 int judge(char chGet) {
@@ -189,8 +210,13 @@ int judge(char chGet) {
 		break;
 	case 'q':
 		return 0;
+		
 	default:
 		break;
+	}
+	if (isGameOver()) {
+		return 0;
+		printf("game over\n");
 	}
 	return 1;
 }
@@ -199,6 +225,7 @@ int main() {
 	printf("請輸入: wsad上下左右、q退出、n新遊戲\n");
 	srand((int)time(0));
 	newGame();
+	printf("Your Point:\n");
 	char chGet;
 	while (1) {
 		scanf("%c", &chGet);
