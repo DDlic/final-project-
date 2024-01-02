@@ -210,7 +210,11 @@ int judge(char chGet) {
 		break;
 	case 'q':
 		return 0;
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> c66f4a9ed5cab4050e3b49a46127eff58b7fbde5
 	default:
 		break;
 	}
