@@ -197,6 +197,7 @@ int main() {
         printf("請輸入操作（w=上, s=下, a=左, d=右, n=重新開始）: ");
         scanf(" %c", &op);
         if (op == 'n') {
+            clearScreen();
             if (pointcount > bigpoint[size - 3]) {
                 bigpoint[size - 3] = pointcount;
             }

@@ -1,13 +1,8 @@
 ﻿  2048.cpp
-d:\wilson\final-project-\final project\final project\2048.cpp(169): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
-d:\wilson\final-project-\final project\final project\2048.cpp(172): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 請參閱 'scanf' 的宣告
-d:\wilson\final-project-\final project\final project\2048.cpp(187): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 請參閱 'scanf' 的宣告
-d:\wilson\final-project-\final project\final project\2048.cpp(190): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 請參閱 'scanf' 的宣告
-d:\wilson\final-project-\final project\final project\2048.cpp(198): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 請參閱 'scanf' 的宣告
-d:\wilson\final-project-\final project\final project\2048.cpp(204): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 請參閱 'scanf' 的宣告
-  final project.vcxproj -> D:\wilson\final-project-\final project\x64\Debug\final project.exe
+C:\Users\oscar.chien\Desktop\程式課\git_final\git_final_03\final-project-\final project\final project\2048.cpp(169,15): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+C:\Users\oscar.chien\Desktop\程式課\git_final\git_final_03\final-project-\final project\final project\2048.cpp(172,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\oscar.chien\Desktop\程式課\git_final\git_final_03\final-project-\final project\final project\2048.cpp(187,13): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\oscar.chien\Desktop\程式課\git_final\git_final_03\final-project-\final project\final project\2048.cpp(190,17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\oscar.chien\Desktop\程式課\git_final\git_final_03\final-project-\final project\final project\2048.cpp(198,9): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\oscar.chien\Desktop\程式課\git_final\git_final_03\final-project-\final project\final project\2048.cpp(205,13): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  final project.vcxproj -> C:\Users\oscar.chien\Desktop\程式課\git_final\git_final_03\final-project-\final project\x64\Debug\final project.exe
