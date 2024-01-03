@@ -196,6 +196,9 @@ int main() {
         printf("請輸入操作（w=上, s=下, a=左, d=右, n=重新開始）: ");
         scanf(" %c", &op);
         if (op == 'n') {
+			if (pointcount > bigpoint) {
+				bigpoint = pointcount;
+			}
             printf("請輸入新的遊戲板大小（3-5）: ");
             scanf("%d", &size);
             newGame(size);
