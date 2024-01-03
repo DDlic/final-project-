@@ -5,7 +5,7 @@
 #define MAX_BOARD_SIZE 5
 
 int a[MAX_BOARD_SIZE][MAX_BOARD_SIZE] = { 0 };  // 遊戲板
-int pointcount = 0, bigpoint = 0;
+int pointcount = 0, bigpoint[3] = {0, 0, 0};  // 最高分，對應3x3, 4x4, 5x5遊戲板
 int boardSize;  // 遊戲板大小
 
 void show() {
@@ -18,9 +18,9 @@ void show() {
 }
 
 void clearScreen() {
-    // 注?掉以下代?以避免?示??
-    // printf("\033[2J\033[H");
-    system("cls");
+    // 清屏命令根據操作系統不同可能有所不同
+    system("cls"); // Windows
+    // system("clear"); // Unix/Linux
 }
 
 int random(int Max) {
@@ -48,7 +48,7 @@ void newGame(int size) {
             a[i][j] = 0;
         }
     }
-    printf("最高分：%d\n", bigpoint);
+    printf("最高分：%d\n", bigpoint[size - 3]);
     pointcount = 0;
     int iFirstPos = randomPos(boardSize);
     int jFirstPos = randomPos(boardSize);
@@ -154,10 +154,10 @@ int isGameOver() {
             if (a[i][j] == 0) {
                 return 0;
             }
-            if (i < boardSize - 1 && a[i][j] == a[i + 1][j]) {
+            if (j < boardSize - 1 && a[i][j] == a[i][j + 1]) {
                 return 0;
             }
-            if (j < boardSize - 1 && a[i][j] == a[i][j + 1]) {
+            if (i < boardSize - 1 && a[i][j] == a[i + 1][j]) {
                 return 0;
             }
         }
@@ -180,8 +180,8 @@ int main() {
     while (1) {
         if (isGameOver()) {
             printf("遊戲結束！您的分數：%d\n", pointcount);
-            if (pointcount > bigpoint) {
-                bigpoint = pointcount;
+            if (pointcount > bigpoint[size - 3]) {
+                bigpoint[size - 3] = pointcount;
             }
             printf("是否再玩一次？(y/n): ");
             scanf(" %c", &op);
@@ -197,8 +197,8 @@ int main() {
         printf("請輸入操作（w=上, s=下, a=左, d=右, n=重新開始）: ");
         scanf(" %c", &op);
         if (op == 'n') {
-            if (pointcount > bigpoint) {
-                bigpoint = pointcount;
+            if (pointcount > bigpoint[size - 3]) {
+                bigpoint[size - 3] = pointcount;
             }
             printf("請輸入新的遊戲板大小（3-5）: ");
             scanf("%d", &size);
